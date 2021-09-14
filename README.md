@@ -72,14 +72,14 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-* Ruby version 2.7.2
-* Rails version 5.2.6
+» Ruby version 2.7.2<br />
+» Rails version 5.2.6
 
 ### Installation
 
 1. Clone the repo
    ```rb
-   git clone https://github.com/Turing-Project-Manager/CodeHerdAPI.git
+   git clone https://github.com/lcpulzone/tea_time.git
    ```
 2. Install gems
    ```rb
@@ -122,8 +122,8 @@ Project Link: [https://github.com/your_username/repo_name](https://github.com/yo
 
 ## Acknowledgements
 
-* [README Template Source](https://github.com/othneildrew/Best-README-Template)
-* [Turing Requirements](https://mod4.turing.edu/projects/take_home/take_home_be)
+» [README Template Source](https://github.com/othneildrew/Best-README-Template)<br />
+» [Turing Requirements](https://mod4.turing.edu/projects/take_home/take_home_be)
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
