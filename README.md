@@ -14,7 +14,7 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a> -->
 
-  <h3 align="center">Tea Time</h3>
+  <h1 align="center">Tea Time</h3>
 
   <p align="center">
     Tea, just in the nick of time.
