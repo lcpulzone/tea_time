@@ -61,7 +61,7 @@
 Create a Rails API for a tea subscription service.
 
 
-#### Built With
+### Built With
 
 » [Ruby on Rails](https://rubyonrails.org/)
 
@@ -70,12 +70,12 @@ Create a Rails API for a tea subscription service.
 
 To get a local copy up and running follow these simple example steps.
 
-#### Prerequisites
+### Prerequisites
 
 * Ruby version 2.7.2
 * Rails version 5.2.6
 
-#### Installation
+### Installation
 
 1. Clone the repo
    ```rb
