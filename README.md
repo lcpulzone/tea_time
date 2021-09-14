@@ -19,12 +19,10 @@
   <p align="center">
     Tea, just in the nick of time.
     <br />
-    <a href="https://github.com/lcpulzone/tea_time"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
     <a href="https://github.com/lcpulzone/tea_time/issues">Report Bug</a>
     ·
     <a href="https://github.com/lcpulzone/tea_time/issues">Request Feature</a>
+    <br />
   </p>
 </p>
 
@@ -65,7 +63,7 @@ Create a Rails API for a tea subscription service.
 
 #### Built With
 
-* [Ruby on Rails](https://rubyonrails.org/)
+» [Ruby on Rails](https://rubyonrails.org/)
 
 
 ## Getting Started
