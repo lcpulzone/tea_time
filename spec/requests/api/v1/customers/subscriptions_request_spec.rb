@@ -6,12 +6,12 @@ RSpec.describe 'Subscriptions', type: :request do
     tea_1 = create(:tea)
     subscription_1 = create(:subscription, customer: customer_1, tea: tea_1)
 
-    post api_v1_new_customer_path(customer_1)
-    customer_response = JSON.parse(response.body, symbolize_names: true)
-    post api_v1_new_tea_path(tea_1)
-    tea_response = JSON.parse(response.body, symbolize_names: true)
-    post api_v1_new_subscription_path(subscription_1)
-    subscription_response = JSON.parse(response.body, symbolize_names: true)
+    post api_v1_customer_path(customer_1)
+    # customer_response = JSON.parse(response.body, symbolize_names: true)
+    post api_v1_tea_path(tea_1)
+    # tea_response = JSON.parse(response.body, symbolize_names: true)
+    post api_v1_subscription_path(subscription_1)
+    # subscription_response = JSON.parse(response.body, symbolize_names: true)
 
 
   end
