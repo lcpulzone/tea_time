@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :subscription do
-    title { "MyString" }
-    price { 1.5 }
-    status { 1 }
-    frequency { "MyString" }
+    title { Faker::Games::Zelda.game }
+    price { Faker::Commerce.price }
+    status { Faker::Number.within(range: 0..1) }
+    frequency { Faker::Subscription.subscription_term }
     tea { nil }
     customer { nil }
   end
