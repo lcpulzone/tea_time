@@ -39,27 +39,11 @@ RSpec.describe 'Subscriptions', type: :request do
       expect(subscription_response[:data][:attributes].size).to eq(6)
       expect(subscription_response[:data][:attributes][:title].class).to eq(String)
       expect(subscription_response[:data][:attributes][:price].class).to eq(Float)
-# {
-#   :data=>
-#   {
-#     :id=>"42",
-#     :type=>"subscriptions",
-#     :attributes=>
-#     {
-#       :title=>"Breath of the Wild",
-#       :price=>28.32,
-#       :status=>"active",
-#       :frequency=>"Triennal",
-#       :tea_id=>51,
-#       :customer_id=>55
-#     }
-#   }
-# }
     end
   end
 
   describe 'cancel' do
-    it 'can cancel a tea subscription without deleting it' do
+    it 'can udpate a tea subscription status to cancelled' do
       tea_2 = create(:tea)
       customer_2 = create(:customer)
       subscription_2 = create(:subscription, tea: tea_2, customer: customer_2)
@@ -69,6 +53,7 @@ RSpec.describe 'Subscriptions', type: :request do
       updated_subscription = JSON.parse(response.body, symbolize_names: true)
 
       expect(subscription_2.status).to eq("active")
+      expect(updated_subscription[:data][:attributes][:status]).to eq("cancelled")
     end
   end
 end
