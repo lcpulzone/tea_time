@@ -14,6 +14,12 @@ RSpec.describe 'Subscriptions', type: :request do
         temperature_in_fahrenheit: 186,
         brew_time_in_minutes: 2.0
       }
+      subscription_1 = {
+        title: "Breath of the Wild",
+        price: 28.32,
+        status: "active",
+        frequency: "Triennal"
+      }
 
     post api_v1_customers_path(customer_1)
     customer_response = JSON.parse(response.body, symbolize_names: true)
@@ -21,9 +27,8 @@ RSpec.describe 'Subscriptions', type: :request do
     post api_v1_teas_path(tea_1)
     tea_response = JSON.parse(response.body, symbolize_names: true)
 
-    # subscription_1 = create(:subscription, customer: customer_1, tea: tea_1)
-    # post api_v1_subscriptions_path(subscription_1)
-    # subscription_response = JSON.parse(response.body, symbolize_names: true)
+    post api_v1_subscriptions_path(subscription_1)
+    subscription_response = JSON.parse(response.body, symbolize_names: true)
 
 
   end
