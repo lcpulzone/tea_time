@@ -63,10 +63,12 @@ RSpec.describe 'Subscriptions', type: :request do
       tea_2 = create(:tea)
       customer_2 = create(:customer)
       subscription_2 = create(:subscription, tea: tea_2, customer: customer_2)
+      updated_subscription_2_status = {status: "cancelled"}
 
-      patch api_v1_subscription_path(status: 1)
+      patch api_v1_subscription_path("#{subscription_2.id}", params: updated_subscription_2_status)
       updated_subscription = JSON.parse(response.body, symbolize_names: true)
-      require "pry";binding.pry
+
+      expect(subscription_2.status).to eq("active")
     end
   end
 end
