@@ -56,4 +56,17 @@ RSpec.describe 'Subscriptions', type: :request do
       expect(updated_subscription[:data][:attributes][:status]).to eq("cancelled")
     end
   end
+
+  describe 'all' do
+    it 'can get all of a customers active and cancelled subscriptions' do
+      tea_3 = create(:tea)
+      customer_3 = create(:customer)
+      subscriptions_3 = create_list(:subscription, 5, tea: tea_3, customer: customer_3)
+
+      get api_v1_subscriptions_path
+      subscription_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(subscription_response[:data].class).to eq(Hash)
+    end
+  end
 end
