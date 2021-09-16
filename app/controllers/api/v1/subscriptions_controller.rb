@@ -1,14 +1,8 @@
 class Api::V1::SubscriptionsController < ApplicationController
   def index
-
-  end
-
-  def show
-
-  end
-
-  def new
-
+    customer = Customer.find(params[:customer_id])
+    subscriptions = customer.subscriptions.find_all
+    render json: SubscriptionsSerializer.new(subscriptions)
   end
 
   def create
@@ -18,20 +12,12 @@ class Api::V1::SubscriptionsController < ApplicationController
     render json: SubscriptionsSerializer.new(subscription)
   end
 
-  def edit
-
-  end
-
   def update
     subscription = Subscription.find(params[:id])
     subscription.update(subscription_params)
     render json: SubscriptionsSerializer.new(subscription)
   end
-
-  def destroy
-
-  end
-
+  
   private
   def subscription_params
     params.permit(:title, :price, :status, :frequency, :tea_id, :customer_id)

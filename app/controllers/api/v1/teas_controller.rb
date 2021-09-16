@@ -1,31 +1,7 @@
 class Api::V1::TeasController < ApplicationController
-  def index
-
-  end
-
-  def show
-
-  end
-
-  def new
-
-  end
-
   def create
     tea = Tea.create(tea_params)
     render json: TeasSerializer.new(tea)
-  end
-
-  def edit
-
-  end
-
-  def update
-
-  end
-
-  def destroy
-
   end
 
   private
