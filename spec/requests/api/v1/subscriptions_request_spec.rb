@@ -46,7 +46,7 @@ RSpec.describe 'Subscriptions', type: :request do
     it 'can udpate a tea subscription status to cancelled' do
       tea_2 = create(:tea)
       customer_2 = create(:customer)
-      subscription_2 = create(:subscription, tea: tea_2, customer: customer_2)
+      subscription_2 = Subscription.create(title: "Zelda II: Adventure of Link", price: 30.03, status: "active", frequency: "Quinquennal", tea_id: "#{tea_2.id}", customer_id: "#{customer_2.id}")
       updated_subscription_2_status = {status: "cancelled"}
 
       patch api_v1_subscription_path("#{subscription_2.id}", params: updated_subscription_2_status)
@@ -54,6 +54,20 @@ RSpec.describe 'Subscriptions', type: :request do
 
       expect(subscription_2.status).to eq("active")
       expect(updated_subscription[:data][:attributes][:status]).to eq("cancelled")
+    end
+  end
+
+  describe 'all' do
+    it 'can get all of a customers active and cancelled subscriptions' do
+      tea_3 = create(:tea)
+      customer_3 = create(:customer)
+      subscriptions_3 = create_list(:subscription, 5, tea: tea_3, customer: customer_3)
+
+      get api_v1_customer_subscriptions_path("#{customer_3.id}")
+      subscription_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(subscription_response[:data].class).to eq(Array)
+      expect(subscription_response[:data].count).to eq(5)
     end
   end
 end

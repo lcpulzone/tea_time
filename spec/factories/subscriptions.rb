@@ -2,7 +2,7 @@ FactoryBot.define do
   factory :subscription do
     title { Faker::Games::Zelda.game }
     price { Faker::Commerce.price }
-    status { 0 }
+    status { Faker::Number.within(range: 0..1) }
     frequency { Faker::Subscription.subscription_term }
     tea { nil }
     customer { nil }
