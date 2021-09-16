@@ -1,26 +1,26 @@
 require 'rails_helper'
 
 RSpec.describe 'Subscriptions', type: :request do
-  describe 'Create' do
+  describe 'create' do
     it 'can generate a new customer, tea and subscription' do
-      customer_1 = {
-        first_name: "Danilo",
-        last_name: "Stark",
-        email: "vincenza@example.net",
-        address: "70069 Emmerich Glens, Port Kinamouth, IN 92013-6820"
-      }
       tea_1 = {
         title: "Shui Xian",
         description: "Green",
         temperature_in_fahrenheit: 186,
         brew_time_in_minutes: 2.0
       }
-
-      post api_v1_customers_path(customer_1)
-      customer_response = JSON.parse(response.body, symbolize_names: true)
+      customer_1 = {
+        first_name: "Danilo",
+        last_name: "Stark",
+        email: "vincenza@example.net",
+        address: "70069 Emmerich Glens, Port Kinamouth, IN 92013-6820"
+      }
 
       post api_v1_teas_path(tea_1)
       tea_response = JSON.parse(response.body, symbolize_names: true)
+
+      post api_v1_customers_path(customer_1)
+      customer_response = JSON.parse(response.body, symbolize_names: true)
 
       subscription_1 = {
         title: "Breath of the Wild",
@@ -39,22 +39,21 @@ RSpec.describe 'Subscriptions', type: :request do
       expect(subscription_response[:data][:attributes].size).to eq(6)
       expect(subscription_response[:data][:attributes][:title].class).to eq(String)
       expect(subscription_response[:data][:attributes][:price].class).to eq(Float)
-# {
-#   :data=>
-#   {
-#     :id=>"42",
-#     :type=>"subscriptions",
-#     :attributes=>
-#     {
-#       :title=>"Breath of the Wild",
-#       :price=>28.32,
-#       :status=>"active",
-#       :frequency=>"Triennal",
-#       :tea_id=>51,
-#       :customer_id=>55
-#     }
-#   }
-# }
+    end
+  end
+
+  describe 'cancel' do
+    it 'can udpate a tea subscription status to cancelled' do
+      tea_2 = create(:tea)
+      customer_2 = create(:customer)
+      subscription_2 = create(:subscription, tea: tea_2, customer: customer_2)
+      updated_subscription_2_status = {status: "cancelled"}
+
+      patch api_v1_subscription_path("#{subscription_2.id}", params: updated_subscription_2_status)
+      updated_subscription = JSON.parse(response.body, symbolize_names: true)
+
+      expect(subscription_2.status).to eq("active")
+      expect(updated_subscription[:data][:attributes][:status]).to eq("cancelled")
     end
   end
 end
