@@ -12,7 +12,8 @@ class Api::V1::TeasController < ApplicationController
   end
 
   def create
-
+    tea = Tea.create(tea_params)
+    render json: TeasSerializer.new(tea)
   end
 
   def edit
@@ -27,8 +28,8 @@ class Api::V1::TeasController < ApplicationController
 
   end
 
-  #private
-  #def _params
-    #params.permit(:)
-  #end
+  private
+  def tea_params
+    params.permit(:title, :description, :temperature_in_fahrenheit, :brew_time_in_minutes)
+  end
 end
