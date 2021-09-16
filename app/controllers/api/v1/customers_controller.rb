@@ -12,7 +12,8 @@ class Api::V1::CustomersController < ApplicationController
   end
 
   def create
-
+    customer = Customer.create(customer_params)
+    render json: CustomersSerializer.new(customer)
   end
 
   def edit
@@ -27,8 +28,8 @@ class Api::V1::CustomersController < ApplicationController
 
   end
 
-  #private
-  #def _params
-    #params.permit(:)
-  #end
+  private
+  def customer_params
+    params.permit(:first_name, :last_name, :email, :address)
+  end
 end
