@@ -23,7 +23,9 @@ class Api::V1::SubscriptionsController < ApplicationController
   end
 
   def update
-
+    subscription = Subscription.find(params[:id])
+    subscription.update(subscription_params)
+    render json: SubscriptionsSerializer.new(subscription)
   end
 
   def destroy
