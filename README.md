@@ -7,15 +7,8 @@
 </div>
 
 
-<!-- PROJECT LOGO -->
-<!-- <br />
-<p align="center">
-  <a href="https://github.com/lcpulzone/tea_time">
-    <img src="images/logo.png" alt="Logo" width="80" height="80">
-  </a> -->
-
   <h2 align="center">Tea Time</h2>
-  
+
   <p align="center">
     Tea, delivered just in the nick of time.
     <br />
@@ -97,6 +90,7 @@ _For more examples, please refer to the [Documentation](https://github.com/lcpul
 
 
 ## Roadmap
+
 
 See the [open issues](https://github.com/lcpulzone/tea_time/issues) for a list of proposed features (and known issues).
 
