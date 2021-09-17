@@ -106,16 +106,9 @@ RSpec.describe 'Subscriptions', type: :request do
 
     it 'will not return all subscriptions without a valid customer' do
       tea3 = create(:tea)
-      subscription3 = {
-        title: "Breath of the Wild",
-        price: 28.32,
-        status: "active",
-        frequency: "Triennal",
-        tea_id: "#{tea3.id}",
-        customer_id: 1
-      }
+      customer3 = 1
 
-      get api_v1_customer_subscriptions_path(1)
+      get api_v1_customer_subscriptions_path(customer3)
       subscription_response = JSON.parse(response.body, symbolize_names: true)
 
       expect(response.status).to eq(404)
