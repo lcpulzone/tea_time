@@ -34,11 +34,48 @@ RSpec.describe 'Subscriptions', type: :request do
       post api_v1_subscriptions_path(subscription_1)
       subscription_response = JSON.parse(response.body, symbolize_names: true)
 
+      expect(response.status).to eq(201)
       expect(subscription_response.class).to eq(Hash)
       expect(subscription_response[:data].class).to eq(Hash)
       expect(subscription_response[:data][:attributes].size).to eq(6)
       expect(subscription_response[:data][:attributes][:title].class).to eq(String)
       expect(subscription_response[:data][:attributes][:price].class).to eq(Float)
+    end
+
+    it 'does not create a new subscription without a tea or customer' do
+      tea1 = {
+        title: "Shui Xian",
+        description: "Green",
+        temperature_in_fahrenheit: 186,
+        brew_time_in_minutes: 2.0
+      }
+      customer1 = {
+        first_name: "Danilo",
+        last_name: "Stark",
+        email: "vincenza@example.net",
+        address: "70069 Emmerich Glens, Port Kinamouth, IN 92013-6820"
+      }
+
+      post api_v1_teas_path(tea1)
+      tea_response = JSON.parse(response.body, symbolize_names: true)
+
+      post api_v1_customers_path(customer1)
+      customer_response = JSON.parse(response.body, symbolize_names: true)
+
+      subscription1 = {
+        title: "Breath of the Wild",
+        price: 28.32,
+        status: "active",
+        frequency: "Triennal",
+        tea_id: nil,
+        customer_id: "#{customer_response[:data][:id]}"
+      }
+
+      post api_v1_subscriptions_path(subscription1)
+      subscription_response = JSON.parse(response.body, symbolize_names: true)
+
+      expect(subscription_response).to eq({error: "Please input a tea or customer"})
+      expect(response.status).to eq(400)
     end
   end
 
@@ -52,6 +89,7 @@ RSpec.describe 'Subscriptions', type: :request do
       patch api_v1_subscription_path("#{subscription_2.id}", params: updated_subscription_2_status)
       updated_subscription = JSON.parse(response.body, symbolize_names: true)
 
+      expect(response.status).to eq(200)
       expect(subscription_2.status).to eq("active")
       expect(updated_subscription[:data][:attributes][:status]).to eq("cancelled")
     end
@@ -66,6 +104,7 @@ RSpec.describe 'Subscriptions', type: :request do
       get api_v1_customer_subscriptions_path("#{customer_3.id}")
       subscription_response = JSON.parse(response.body, symbolize_names: true)
 
+      expect(response.status).to eq(202)
       expect(subscription_response[:data].class).to eq(Array)
       expect(subscription_response[:data].count).to eq(5)
     end
