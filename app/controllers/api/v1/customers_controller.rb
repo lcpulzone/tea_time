@@ -1,7 +1,7 @@
 class Api::V1::CustomersController < ApplicationController
   def create
     customer = Customer.create(customer_params)
-    render json: CustomersSerializer.new(customer)
+    render json: CustomersSerializer.new(customer), status: 201
   end
 
   private
