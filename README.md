@@ -86,7 +86,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Usage
 
-_For more examples, please refer to the [Documentation](https://github.com/lcpulzone/tea_time)_
+_For more examples, please refer to the [Documentation](https://mod4.turing.edu/projects/take_home/take_home_be)_
 
 
 ## Roadmap
