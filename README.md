@@ -91,6 +91,7 @@ _For more examples, please refer to the [Documentation](https://github.com/lcpul
 
 ## Roadmap
 
+![database_schema](https://github.com/lcpulzone/tea_time/blob/main/db_schema.33.52.png?raw=true)
 
 See the [open issues](https://github.com/lcpulzone/tea_time/issues) for a list of proposed features (and known issues).
 
