@@ -45,7 +45,8 @@
 
 ## About The Project
 
-[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
+[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)<br />
+![tested with rspec](https://github.com/lcpulzone/tea_time/blob/main/tested-with-rspec.svg)
 
 The goal of this project is to  create a Rails API for a Tea Subscription Service within a time limit of approximately 8 hours.  
 
@@ -80,20 +81,20 @@ To get a local copy up and running follow these simple example steps.
    ```
 
 ### Testing
-![tested with rspec](https://github.com/lcpulzone/tea_time/blob/main/tested-with-rspec.svg)
 
-Tested with [RSpec](https://rspec.info/)
+[RSpec](https://rspec.info/)
 
-_To run testing suite_
+1. To run testing suite
 ```rb
 bundle exec rspec
 ```
 
-   ## Schema
 
-   ![database_schema](https://github.com/lcpulzone/tea_time/blob/main/db_schema.33.52.png?raw=true)
+## Schema
 
-   See the [open issues](https://github.com/lcpulzone/tea_time/issues) for a list of proposed features (and known issues).
+![database_schema](https://github.com/lcpulzone/tea_time/blob/main/db_schema.33.52.png?raw=true)
+
+See the [open issues](https://github.com/lcpulzone/tea_time/issues) for a list of proposed features (and known issues).
 
 
 ## Endpoints
