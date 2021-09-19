@@ -80,6 +80,7 @@ To get a local copy up and running follow these simple example steps.
    ```
 
 ### Testing
+![tested with rspec](https://github.com/lcpulzone/tea_time/blob/main/tested-with-rspec.svg)
 
 Tested with [RSpec](https://rspec.info/)
 
