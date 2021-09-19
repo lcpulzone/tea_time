@@ -6,7 +6,6 @@
 <a href=https://www.linkedin.com/in/lcpulzone/><img src="https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555" /></a>
 </div>
 
-
   <h2 align="center">Tea Time</h2>
 
   <p align="center">
@@ -25,12 +24,7 @@
 <details open="open">
   <summary>Table of Contents</summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
+    <li><a href="#about-the-project">About The Project</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -38,8 +32,8 @@
         <li><a href="#installation">Installation</a></li>
       </ul>
     </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
+    <li><a href="#schema">Schema</a></li>
+    <li><a href="#endpoints">Endpoints</a></li>
     <li><a href="#contributing">Contributing</a></li>
     <li><a href="#contact">Contact</a></li>
     <li><a href="#acknowledgements">Acknowledgements</a></li>
@@ -50,13 +44,14 @@
 
 ## About The Project
 
-<!-- [![Product Name Screen Shot][product-screenshot]](https://example.com) -->
-Create a Rails API for a tea subscription service.
+[![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
 
+The goal of this project is to  create a Rails API for a Tea Subscription Service, within a time limit of approximately 8 hours.  
 
-### Built With
-
-» [Ruby on Rails](https://rubyonrails.org/)
+The minimum endpoints asked for are:
+*  An endpoint to subscribe a customer to a tea subscription
+*  An endpoint to cancel a customer’s tea subscription
+*  An endpoint to see all of a customer’s subscriptions (active and cancelled)
 
 
 ## Getting Started
@@ -83,8 +78,14 @@ To get a local copy up and running follow these simple example steps.
    rails db:{create,migrate}
    ```
 
+   ## Schema
 
-## Usage
+   ![database_schema](https://github.com/lcpulzone/tea_time/blob/main/db_schema.33.52.png?raw=true)
+
+   See the [open issues](https://github.com/lcpulzone/tea_time/issues) for a list of proposed features (and known issues).
+
+
+## Endpoints
 
 | DESCRIPTION | ACTION | PATH |
 |--|--|--|
@@ -95,16 +96,9 @@ To get a local copy up and running follow these simple example steps.
 | get all a customer's subscriptions | GET | localhost:3000/api/v1/customers/<customer_id>/subscriptions |
 
 
-## Roadmap
-
-![database_schema](https://github.com/lcpulzone/tea_time/blob/main/db_schema.33.52.png?raw=true)
-
-See the [open issues](https://github.com/lcpulzone/tea_time/issues) for a list of proposed features (and known issues).
-
-
 ## Contributing
 
-Contributions are what make the open source community such an amazingly, rad place to learn, inspire, and create. Any contributions you make are **greatly appreciated**.
+Contributions are what make the open source community such an amazingly, rad place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/RadFeature`)
@@ -115,7 +109,7 @@ Contributions are what make the open source community such an amazingly, rad pla
 
 ## Contact
 
-Leigh Cepriano Pulzone - [Linkedin](https://www.linkedin.com/in/lcpulzone/) - [GitHub](https://github.com/lcpulzone) - lcpulzone@gmail.com
+Leigh Cepriano Pulzone - [Linkedin](https://www.linkedin.com/in/lcpulzone/) - [GitHub](https://github.com/lcpulzone) - [Email](lcpulzone@gmail.com)
 
 Project Link: [Tea Time](https://github.com/lcpulzone/tea_time)
 
