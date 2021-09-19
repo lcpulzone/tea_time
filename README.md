@@ -86,7 +86,13 @@ To get a local copy up and running follow these simple example steps.
 
 ## Usage
 
-_For more examples, please refer to the [Documentation](https://mod4.turing.edu/projects/take_home/take_home_be)_
+| DESCRIPTION | ACTION | PATH |
+|--|--|--|
+| create a new tea | POST | localhost:3000/api/v1/teas |
+| create a new customer | POST | localhost:3000/api/v1/customers |
+| create a new subscription | POST | localhost:3000/api/v1/subscriptions |
+| update a customer's subscription status | PATCH | localhost:3000/api/v1/customers/<customer_id>/subscriptions/<subscription_id> |
+| get all a customer's subscriptions | GET | localhost:3000/api/v1/customers/<customer_id>/subscriptions |
 
 
 ## Roadmap
@@ -111,7 +117,7 @@ Contributions are what make the open source community such an amazingly, rad pla
 
 Leigh Cepriano Pulzone - [Linkedin](https://www.linkedin.com/in/lcpulzone/) - [GitHub](https://github.com/lcpulzone) - lcpulzone@gmail.com
 
-Project Link: [https://github.com/your_username/repo_name](https://github.com/your_username/repo_name)
+Project Link: [Tea Time](https://github.com/lcpulzone/tea_time)
 
 
 
