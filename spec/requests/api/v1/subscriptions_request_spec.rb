@@ -68,9 +68,9 @@ RSpec.describe 'Subscriptions', type: :request do
       tea_2 = create(:tea)
       customer_2 = create(:customer)
       subscription_2 = Subscription.create(title: "Zelda II: Adventure of Link", price: 30.03, status: "active", frequency: "Quinquennal", tea_id: "#{tea_2.id}", customer_id: "#{customer_2.id}")
-      updated_subscription_2_status = {status: "cancelled"}
+      updated_subscription2_status = {status: "cancelled"}
 
-      patch api_v1_subscription_path("#{subscription_2.id}", params: updated_subscription_2_status)
+      patch api_v1_customer_subscription_path("#{customer_2.id}", "#{subscription_2.id}", params: updated_subscription2_status)
       updated_subscription = JSON.parse(response.body, symbolize_names: true)
 
       expect(response.status).to eq(200)
@@ -79,10 +79,11 @@ RSpec.describe 'Subscriptions', type: :request do
     end
 
     it 'will return an error without a valid subscription id' do
+      customer2id = 1
       subscription2id = 1
       updated_subscription2_status = {status: "cancelled"}
 
-      patch api_v1_subscription_path(subscription2id, params: updated_subscription2_status)
+      patch api_v1_customer_subscription_path(customer2id, subscription2id, params: updated_subscription2_status)
       failed_subscription = JSON.parse(response.body, symbolize_names: true)
 
       expect(response.status).to eq(406)
