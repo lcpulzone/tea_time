@@ -30,6 +30,7 @@
       <ul>
         <li><a href="#prerequisites">Prerequisites</a></li>
         <li><a href="#installation">Installation</a></li>
+        <li><a href="#testing">Testing</a></li>
       </ul>
     </li>
     <li><a href="#schema">Schema</a></li>
@@ -46,7 +47,7 @@
 
 [![forthebadge](https://forthebadge.com/images/badges/made-with-ruby.svg)](https://forthebadge.com)
 
-The goal of this project is to  create a Rails API for a Tea Subscription Service, within a time limit of approximately 8 hours.  
+The goal of this project is to  create a Rails API for a Tea Subscription Service within a time limit of approximately 8 hours.  
 
 The minimum endpoints asked for are:
 *  An endpoint to subscribe a customer to a tea subscription
@@ -60,8 +61,8 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-» Ruby version 2.7.2<br />
-» Rails version 5.2.6
+» [Ruby](https://www.ruby-lang.org/en/) version 2.7.2<br />
+» [Rails](https://rubyonrails.org/) version 5.2.6
 
 ### Installation
 
@@ -77,6 +78,15 @@ To get a local copy up and running follow these simple example steps.
    ```rb
    rails db:{create,migrate}
    ```
+
+### Testing
+
+Tested with [RSpec](https://rspec.info/)
+
+_To run testing suite_
+```rb
+bundle exec rspec
+```
 
    ## Schema
 
@@ -98,7 +108,7 @@ To get a local copy up and running follow these simple example steps.
 
 ## Contributing
 
-Contributions are what make the open source community such an amazingly, rad place to learn, inspire, and create. Any contributions you make are greatly appreciated.
+Contributions are what make the open source community such an amazingly rad place to learn, inspire, and create. Any contributions you make are greatly appreciated.
 
 1. Fork the Project
 2. Create your Feature Branch (`git checkout -b feature/RadFeature`)
