@@ -32,7 +32,7 @@ RSpec.describe 'Subscriptions', type: :request do
         customer_id: "#{customer_response[:data][:id]}"
       }
 
-      post api_v1_subscriptions_path(subscription_1)
+      post api_v1_customer_new_subscriptions_path("#{subscription_1[:customer_id]}", subscription_1)
       subscription_response = JSON.parse(response.body, symbolize_names: true)
 
       expect(response.status).to eq(201)
@@ -55,7 +55,7 @@ RSpec.describe 'Subscriptions', type: :request do
         customer_id: "#{customer1.id}"
       }
 
-      post api_v1_subscriptions_path(subscription1)
+      post api_v1_customer_new_subscriptions_path("#{subscription1[:customer_id]}", subscription1)
       subscription_response = JSON.parse(response.body, symbolize_names: true)
 
       expect(response.status).to eq(400)
