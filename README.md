@@ -103,7 +103,7 @@ See the [open issues](https://github.com/lcpulzone/tea_time/issues) for a list o
 |--|--|--|
 | create a new tea | POST | localhost:3000/api/v1/teas |
 | create a new customer | POST | localhost:3000/api/v1/customers |
-| create a new subscription | POST | localhost:3000/api/v1/subscriptions |
+| create a new subscription | POST | localhost:3000/api/v1/customers/<customer_id>/subscriptions |
 | update a customer's subscription status | PATCH | localhost:3000/api/v1/customers/<customer_id>/subscriptions/<subscription_id> |
 | get all a customer's subscriptions | GET | localhost:3000/api/v1/customers/<customer_id>/subscriptions |
 
